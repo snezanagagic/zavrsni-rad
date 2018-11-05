@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.hssf.usermodel.examples.CellTypes;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
 
 public class ExcelUtil {
 
@@ -73,7 +74,7 @@ public class ExcelUtil {
 
 			Row1 = ExcelWSheet.getRow(RowNum);
 
-			Cell = Row1.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
+			Cell = Row1.getCell(ColNum, MissingCellPolicy.RETURN_BLANK_AS_NULL);
 
 			if (Cell == null) {
 
